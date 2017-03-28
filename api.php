@@ -2,6 +2,15 @@
 
 <?php
   if (array_key_exists('PATH_INFO', $_SERVER)) {
-      print_r(explode('/', $_SERVER['PATH_INFO']));
+      $params = $_SERVER['PATH_INFO'];
+
+      switch($params) {
+        case 'picture':
+
+        case 'interval':
+
+        default:
+          header('header("HTTP/1.0 404 Not Found");')
+      }
   }
 ?>
