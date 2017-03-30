@@ -3,7 +3,7 @@ session_start();
 include('api_utils.php');
 
 // disable direct access to the page.
-if ((sizeof($_POST) == 0 && sizeof($_GET) == 0) || !array_key_exists('HTTP_REFERER', $_SERVER)) {
+if (!array_key_exists('method', $_GET) || !array_key_exists('HTTP_REFERER', $_SERVER)) {
   header("HTTP/1.0 404 Not Found");
 }
 
