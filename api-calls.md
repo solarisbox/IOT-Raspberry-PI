@@ -1,7 +1,9 @@
 # METHOD DESCRIPTIONS
-  * POST login  - login the user under POST['user'] and POST['pass'].
-  * POST logout - log out the currently logged in user.
-  * POST signup - attempt to create the user POST['user'] and POST['pass'].
+  | REQUEST TYPE | METHOD | DESCRIPTION|
+  |:------------:|:-------|:-----------|
+  | POST | login  | login the user under POST['user'] and POST['pass'].
+  | POST | logout | log out the currently logged in user.
+  | POST | signup | attempt to create the user POST['user'] and POST['pass'].
 
 # SESSION VARIABLES
   * user
