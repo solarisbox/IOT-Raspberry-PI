@@ -8,6 +8,7 @@ CREATE TABLE `users` (
  `active` int(11) DEFAULT NULL,
  `join_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
  `avatar_url` mediumtext,
+ `city` varchar(255),
  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 

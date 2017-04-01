@@ -41,6 +41,7 @@ function loginUser($username, $password) {
     return Array(
       'username' => $result[3],
       'userId' => $result[0],
+      'city' => $result[9],
       'logged' => true
     );
   } else {  // user does not exist
@@ -51,6 +52,7 @@ function loginUser($username, $password) {
   }
 }
 
+
 /* create a new user in the database then return a success message. */
 function createNewUser($username, $password) {
   $con = connectToDatabase();
@@ -59,3 +61,27 @@ function createNewUser($username, $password) {
     ."values ('$username', '$password');"
   );
 }
+
+function userSettings($username, $fname, $lname, $email, $city) {
+  $con = connectToDatabase();
+  mysqli_query($con,
+    "update users "
+    ."set firstName = '$fname', lastName = '$lname', email = '$email', city = '$city' "
+    ."where username = '$username'; "
+  );
+
+  $updates = mysqli_query($con,
+    "select * from users "
+    ."where username = '$username'; "
+  );
+
+  $result = mysqli_fetch_row($updates);
+    return Array(
+      'username' => $result[3],
+      'userId' => $result[0],
+      'city' => $result[9],
+      'logged' => true
+    );
+}
+
+

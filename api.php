@@ -34,6 +34,14 @@ if ($_GET['method'] == "signup") {
   }
 }
 
+
+/* ==== ==== USER SETTINGS ==== ==== */
+if ($_GET['method'] == "settings") {   
+    $_SESSION['user'] = userSettings($_SESSION['user']['username'], $_POST['fname'], 
+                        $_POST['lname'], $_POST['email'], $_POST['city']);
+} 
+
+
 // return the visitor to the previous page they were on.
 header("Location: " .  $_SERVER['HTTP_REFERER']);
 
